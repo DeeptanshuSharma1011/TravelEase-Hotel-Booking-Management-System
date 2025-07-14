@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rooms.css">
+</head>
+<body>
+     <!-- NAVIGATION BAR -->
+  <nav>
+    <div class="siteName">TravelEase</div>
+    <div class="menu">
+      <a href="home.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacts.html">Contact</a>
+    </div>
+
+    <a href="/rooms.html" class="book-btn">Book Now</a>
+  </nav>
+
+
+  <!-- FIRST ROOM CARD -->
+   <div class="room-card">
+  <div class="room-img" style="background-image: url('duplex\ room.jpg');"></div>
+
+  <!-- FLEX CONTAINER -->
+  <div class="room-details-flex">
+    <!-- ROOM INFO -->
+    <div class="room-info">
+      <h2>Duplex Room</h2><br>
+      <p class="content">Semi double bed 1 guest room,<br>3 windows</p><br>
+      <p class="price"><small>Starting from <strong>$50 / night</strong></small></p>
+    </div>
+
+    <!-- AMENITIES LIST -->
+    <div class="amenities">
+      <ul>
+        <br>
+        <li>24x7 Room service available</li>
+        <li>Free Wi-Fi</li>
+        <li>Complimentary breakfast</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOOK NOW BUTTON -->
+   <br>
+  <button class="room-btn1" id="room-btn1">Book now</button>
+</div>
+
+
+<!-- SECOND ROOM CARD -->
+<div class="room-card">
+  <div class="room-img" style="background-image: url('classic\ room.jpg');"></div>
+
+  <!-- FLEX CONTAINER -->
+  <div class="room-details-flex">
+    <!-- ROOM INFO -->
+    <div class="room-info">
+      <h2>Classic Room</h2><br>
+      <p class="content">Double bed, 2 windows,<br>mountain view</p><br>
+      <p class="price"><small>Starting from <strong>$70 / night</strong></small></p>
+    </div>
+
+    <!-- AMENITIES LIST -->
+    <div class="amenities">
+      <ul>
+        <br>
+        <li>Mountain view</li>
+        <li>24x7 Room service available</li>
+        <li>Free Wi-Fi</li>
+        <li>Breakfast included</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOOK NOW BUTTON -->
+   <br>
+  <button class="room-btn2" id="room-btn2">Book now</button>
+</div>
+
+
+<!-- THIRD ROOM CARD -->
+<div class="room-card">
+  <div class="room-img" style="background-image: url('Double\ bed\ room.jpg');"></div>
+
+  <!-- FLEX CONTAINER -->
+  <div class="room-details-flex">
+    <!-- ROOM INFO -->
+    <div class="room-info">
+      <h2>Double Bed Room</h2><br>
+      <p class="content">Semi double bed, 3 windows,<br>mountain view</p><br>
+      <p class="price"><small>Starting from <strong>$80 / night</strong></small></p>
+    </div>
+
+    <!-- AMENITITES LIST -->
+    <div class="amenities">
+      <ul>
+        <br>
+        <li>Mountain view</li>
+        <li>24x7 Room service available</li>
+        <li>Free Wi-Fi</li>
+        <li>Breakfast included</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOOK NOW BUTTON -->
+   <br>
+  <button class="room-btn3" id="room-btn3">Book now</button>
+</div>
+
+<script>
+document.getElementById('room-btn1').addEventListener('click', function() {
+    alert("Thank you for choosing the Duplex Room.");
+  });
+
+  document.getElementById('room-btn2').addEventListener('click', function() {
+    alert("Thank you for choosing the Classic Room.");
+  });
+
+  document.getElementById('room-btn3').addEventListener('click', function() {
+    alert("Thank you for choosing the Double Bed Room.");
+  });
+</script>
+</body>
+</html>

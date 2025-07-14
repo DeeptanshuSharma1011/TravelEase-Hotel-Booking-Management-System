@@ -1,0 +1,380 @@
+/* RESET & FONT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('luxury-suite-bedroom.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* NAVIGATION BAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.siteName {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #e91e63;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: #ff4081;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn, .book-btn {
+  padding: 10px 16px;
+  background-color: #ff4081;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-btn:hover, .book-btn:hover {
+  background-color: #8a1139;
+}
+
+.settings-icon, .profile-icon {
+  background-color: #ff4081;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.settings-icon:hover, .profile-icon:hover {
+  background-color: #8a1139;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.hero span {
+  color: #ff4081;
+}
+
+.auth-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal-content input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  }
+
+/* BOOKING FORM */
+.booking-form {
+  display: flex;
+  justify-content: center;
+  background: white;
+  color: black;
+  padding: 25px 35px;
+  margin: 60px auto;
+  width: 85%;
+  max-width: 1100px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+  flex: 1;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.submit-btn {
+  background-color: #ff4081;
+  color: white;
+  padding: 14px 25px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 20px;
+  margin-top: 20px;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #8a1139;
+  transform: translateY(-2px);
+}
+
+/* ROOMS SECTION */
+.rooms-section {
+  padding: 4rem 5%;
+  background-color: #fff;
+  color: #333;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header p {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+
+/* ROOM CARDS */
+.room-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.room-card {
+  width: 320px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.room-info {
+  padding: 1.4rem;
+  text-align: left;
+}
+
+.room-info h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.room-info p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.price {
+  margin: 1rem 0;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ROOM BOOK NOW BUTTON */
+.room-btn {
+  background: #ff4081;
+  color: white;
+  padding: 0.6rem 1.6rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.room-btn:hover {
+  background: #8a1139;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .booking-form {
+    flex-direction: column;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .room-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .room-card {
+    width: 90%;
+  }
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelEase</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- NAVIGATION BAR -->
+<nav>
+  <div class="siteName">TravelEase</div>
+  <div class="menu">
+    <a href="home.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="contacts.html">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <div id="authButtons">
+      <button class="nav-btn" onclick="showLogin()">Login</button>
+      <button class="nav-btn" onclick="showSignup()">Sign Up</button>
+    </div>
+    <div id="userLoggedIn" style="display: none; align-items: center; gap: 10px;">
+      <div class="dropdown">
+        <button class="nav-btn" onclick="toggleSettingsDropdown()" title="Settings">⚙️</button>
+        <div class="dropdown-content" id="settingsDropdown">
+          <a href="#" onclick="toggleTheme()">Toggle Theme</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="profile-icon" onclick="toggleProfileDropdown()" title="Profile">👤</button>
+        <div class="dropdown-content" id="profileDropdown">
+          <a href="#">My Bookings</a>
+        </div>
+      </div>
+      <a href="rooms.html" class="book-btn">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Login Modal -->
+<div id="modalOverlay" class="modal-overlay" onclick="closeModal()"></div>
+<div id="loginModal" class="auth-modal">
+  <div class="modal-content">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <button onclick="handleLogin()">Login</button>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signupModal" class="auth-modal">
+  <div class="modal-content">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupName" placeholder="Name" required />
+    <input type="email" id="signupEmail" placeholder="Email" required />
+    <input type="password" id="signupPassword" placeholder="Password" required />
+    <button onclick="handleSignup()">Sign Up</button>
+  </div>
+</div>
+
+
+
+  <!-- TEXT OVER IMAGE -->
+  <div class="hero">
+    <h1>Make yourself at home<br> in our <span>Hotel.</span></h1>
+  </div>
+
+
+
+  <!-- BOOKING PANEL -->
+  <div class="booking-form" id="booking-form">
+
+    <div class="form-group">
+      <label for="checkin">CHECK-IN</label>
+      <input type="date" id="checkin" name="checkin">
+    </div>
+
+    <div class="form-group">
+      <label for="checkout">CHECK-OUT</label>
+      <input type="date" id="checkout" name="checkout">
+    </div>
+
+    <div class="form-group">
+      <label for="person">PERSON(s)</label>
+      <select id="person" name="person">
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="room">Room Type</label>
+      <select id="roomtype" name="roomtype">
+        <option value="Duplex">Duplex</option>
+        <option value="Classic">Classic</option>
+        <option value="DoubleBed">Double Bed</option>
+      </select>
+    </div>
+
+    <button class="submit-btn" id="checkoutbtn">CHECK OUT</button>
+  </div>
+
+
+
+  <!-- TEXT ABOVE ROOM CARDS -->
+  <section class="rooms-section">
+    <div class="section-header">
+      <p>OUR LIVING ROOM</p>
+      <h2>The most memorable rest<br> time starts here.</h2>
+    </div>
+
+
+
+    <!-- ROOM CARDS -->
+     <!-- FIRST ROOM CARD -->
+    <div class="room-cards">
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('duplex\ room.jpg');">
+          <!-- <span class="room-number">01</span> -->
+        </div>
+
+        <div class="room-info">
+          <h3>Duplex Room</h3>
+          <p>Semi double bed 1 guest room,<br>3 windows</p>
+          <p class="price">Starting from <strong>$50 / night</strong></p>
+          <button class="room-btn" id="room-btn1">Book now</button>
+        </div>
+      </div>
+
+
+
+      <!-- SECOND ROOM CARD -->
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('classic\ room.jpg');">
+          <!-- <span class="room-number">02</span> -->
+        </div>
+
+        <div class="room-info">
+          <h3>Classic Room</h3>
+          <p>Double bed, 2 windows,<br>mountain view</p>
+          <p class="price">Starting from <strong>$70 / night</strong></p>
+          <button class="room-btn" id="room-btn1">Book now</button></button>
+        </div>
+      </div>
+
+
+
+      <!-- THIRD ROOM CARD -->
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('Double\ bed\ room.jpg');">
+          <!-- <span class="room-number">03</span> -->
+        </div>
+
+        <div class="room-info">
+          <h3>Double Bed Room</h3>
+          <p>Semi double bed, 3 windows,<br>mountain view</p>
+          <p class="price">Starting from <strong>$80 / night</strong></p>
+          <button class="room-btn" id="room-btn1">Book now</button></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  // Ensure the script runs after DOM is loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("booking-form");
+
+    if (!form) {
+      console.error("❌ booking-form not found in DOM!");
+      return;
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      // Fetch values
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const person = document.getElementById("person").value;
+      const roomType = document.getElementById("roomType").value;
+
+      // Debug log
+      console.log("🟡 Booking data:", { checkin, checkout, person, roomType });
+
+      try {
+        const response = await fetch("http://localhost:5000/api/booking", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ checkin, checkout, person, roomType }),
+        });
+
+        const result = await response.json();
+        console.log("🟢 Server response:", result);
+
+        if (response.ok) {
+          alert("✅ Booking completed successfully!");
+          form.reset();
+        } else {
+          alert(result.message || "❌ Something went wrong while booking.");
+        }
+      } catch (err) {
+        console.error("🔥 Booking error:", err);
+        alert("❌ Booking failed. Please try again later.");
+      }
+    });
+  });
+
+
+function toggleSettingsDropdown() {
+  document.getElementById('settingsDropdown').style.display =
+    document.getElementById('settingsDropdown').style.display === 'block' ? 'none' : 'block';
+  document.getElementById('profileDropdown').style.display = 'none';
+}
+
+function toggleProfileDropdown() {
+  document.getElementById('profileDropdown').style.display =
+    document.getElementById('profileDropdown').style.display === 'block' ? 'none' : 'block';
+  document.getElementById('settingsDropdown').style.display = 'none';
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark-theme');
+}
+
+function login() {
+  document.getElementById('authButtons').style.display = 'none';
+  document.getElementById('userLoggedIn').style.display = 'flex';
+}
+
+function logout() {
+  document.getElementById('authButtons').style.display = 'flex';
+  document.getElementById('userLoggedIn').style.display = 'none';
+}
+
+// Close dropdowns on outside click
+window.addEventListener('click', function (e) {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-content').forEach(el => el.style.display = 'none');
+  }
+});
+
+// Modal Controls
+function showLogin() {
+  document.getElementById('modalOverlay').style.display = 'block';
+  document.getElementById('loginModal').style.display = 'block';
+  document.getElementById('signupModal').style.display = 'none';
+}
+
+function showSignup() {
+  document.getElementById('modalOverlay').style.display = 'block';
+  document.getElementById('signupModal').style.display = 'block';
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
+  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById('signupModal').style.display = 'none';
+}
+
+async function handleSignup() {
+  const name = document.getElementById('signupName').value;
+  const email = document.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+
+  const res = await fetch('/api/auth/signup', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, password })
+  });
+
+  const data = await res.json();
+  alert(data.message || 'Signup successful');
+  closeModal();
+  login();
+}
+
+async function handleLogin() {
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+
+  const res = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+
+  const data = await res.json();
+  if (data.token) {
+    localStorage.setItem('token', data.token);
+    alert('Login successful');
+    closeModal();
+    login();
+  } else {
+    alert(data.message || 'Login failed');
+  }
+}
+document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const checkin = document.getElementById('checkin').value;
+  const checkout = document.getElementById('checkout').value;
+  const person = document.getElementById('person').value;
+
+  const response = await fetch('http://localhost:5000/api/bookings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ checkin, checkout, person })
+  });
+
+  const result = await response.json();
+  alert(result.message || 'Booking successful');
+});
+
+</script>
+
+
+</body>
+</html>

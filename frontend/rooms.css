@@ -1,0 +1,167 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* background behind text and nav bar */
+    body {
+      background: url('luxury-suite-bedroom.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+
+    /* NAVIGATION BAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* TRAVELEASE TEXT */
+    .siteName {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+    }
+
+
+
+    /* TEXT ON NAVIGATION BAR */
+    .menu a {
+  position: relative;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* TRANSITION ON HOVERING OVER NAVIGATION BAR TEXT */
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #e91e63;
+  left: 0;
+  bottom: -6px;
+}
+
+/* PINK LINE THAT COMES UNDER NAV BAR TEXT */
+.menu a:hover::after{
+  width: 100%;
+}
+
+/* BOOK NOW BUTTON */
+    .book-btn {
+      padding: 10px 20px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* TRANSITION OF BOOK NOW BUTTON */
+    .book-btn:hover{
+        background-color: #8a1139;
+    }
+
+.room-card {
+  background-color: white;
+  margin: 5rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+.room-img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Flex container for info + amenities */
+.room-details-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.room-info {
+  flex: 1.5;
+  color: black;
+  font-size: large;
+}
+
+.content {
+  flex: 1.5;
+  color: grey;
+  font-size: large;
+}
+
+.amenities {
+  flex: 1;
+  color: grey;
+  font-size: 16px;
+}
+
+.amenities ul {
+  list-style-type: disc;
+  padding-left: 1rem;
+  margin-top: 2rem;
+  color: grey;
+}
+
+/* ROOM BOOK NOW BUTTON 1*/
+.room-btn1 {
+  background: #ff4081;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ROOM BOOK NOW BUTTON 1 HOVERING EFFECT */
+.room-btn1:hover {
+  background: #8a1139;
+}
+
+/* ROOM BOOK NOW BUTTON 2*/
+.room-btn2 {
+  background: #ff4081;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ROOM BOOK NOW BUTTON 2 HOVERING EFFECT */
+.room-btn2:hover {
+  background: #8a1139;
+}
+
+/* ROOM BOOK NOW BUTTON 3*/
+.room-btn3 {
+  background: #ff4081;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ROOM BOOK NOW BUTTON 3 HOVERING EFFECT */
+.room-btn3:hover {
+  background: #8a1139;
+}
+
